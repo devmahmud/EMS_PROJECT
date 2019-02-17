@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %} | home{% endblock title %}
+
+{% block content %}
+<h2 class="mt-2 mb-3">List of polls</h2>
+
+{% if questions %}
+<ul class="list-group">
+    {% for question in questions %}
+    <li class="list-group-item"><a href="{% url 'single_poll' question.id %}">{{ question.title }}</a></li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>There are no question !!</p>
+{% endif %}
+
+{% endblock content %}

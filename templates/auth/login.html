@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="row mt-5">
+    <div class="col-md-6 offset-md-3">
+        <div class="card" style="width: 30rem;">
+            <h5 class="card-header text-center">User Login</h5>
+            <div class="card-body">
+                <form method='POST'>
+                    {% csrf_token %}
+                    <label for="username">Username:</label>
+                    <input class="form-control" type="text" name="username" id="username" placeholder="Username"><br>
+                    <label for="password">Password:</label>
+                    <input class="form-control" type="password" name="password" id="password" placeholder="Password"><br>
+                    <button class="btn btn-secondary" type="submit">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %} | Employee Detail{% endblock title %}
+
+{% block content %}
+<h5 class="mt-3 mb-3"><b>Employee Details</b></h5>
+<table class="table table-striped table-bordered">
+    <tbody>
+        <tr>
+            <td><b>First Name</b></td>
+            <td>{{ employee.first_name }}</td>
+        </tr>
+        <tr>
+            <td><b>Last Name</b></td>
+            <td>{{ employee.last_name }}</td>
+        </tr>
+        <tr>
+            <td><b>Email</b></td>
+            <td>{{ employee.email }}</td>
+        </tr>
+        <tr>
+            <td><b>Salary</b></td>
+            <td>{{ employee.salary }}</td>
+        </tr>
+        <tr>
+            <td><b>Designation</b></td>
+            <td>{{ employee.designation }}</td>
+        </tr>
+    </tbody>
+</table>
+<div class="float-right">
+    <a class="btn btn-warning" href="{% url 'edit_employee' employee.id %}">Edit</a>
+    <a class="btn btn-danger" href="{% url 'delete_employee' employee.id %}">Delete</a>
+</div>
+{% endblock content %}
